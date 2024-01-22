@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import moment from 'moment'
-import { MonthCard } from './components/MonthCard';
+import { MonthCard } from './components/MonthCard'
 
  export function App() {
   const [currentYear, setCurrentYear] = useState("2024");
