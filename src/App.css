@@ -1,0 +1,31 @@
+#root {
+    max-width: 100vw;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    -webkit-font-smoothing: antialiased;
+    box-sizing: border-box;
+}
+
+#calendar-page {
+    background: #3f6212;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-page {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: xx-large;
+    font-weight: 700;
+    margin: 1rem auto;
+    color: #f7fee7;
+}
+
+.content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding-left: 1rem;
+    width: 90vw;
+}

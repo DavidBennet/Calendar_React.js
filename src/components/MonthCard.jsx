@@ -1,6 +1,7 @@
 import moment from "moment"
 import { useState, useEffect } from "react"
 import { DayCard } from "./DayCard";
+import "../styles/MonthCard.css"
 
 export function MonthCard(props) {
     const [value, setValue] = useState(
@@ -8,24 +9,31 @@ export function MonthCard(props) {
     );
   
     const [calendar, setCalendar] = useState([]);
-    const weekDays = ["D", "s", "T", "Q", "Q", "S", "S"]
+    const weekDays = ["D", "S", "T", "Q", "Q", "S", "S"]
     
+    const calendarBackup = [];
+
     useEffect(() => {
         const startDay = value.clone().startOf("month").startOf("week")
         const endDay = value.clone().endOf("month").endOf("week")
         const day = startDay.clone().subtract(1, "day")
         
         while(day.isBefore(endDay, "day")) {
-            calendar.push(
+            calendarBackup.push(
                 Array(7).fill(0).map(() => day.add(1, "day").clone())
             )
         }
+
+        setCalendar(calendarBackup)
+
     }, [value])
     
     return(
         <div id="month-card">
             <div className="header">{value.format("MMMM")}</div>
-            <div className="week-days"></div>
+            <div className="week-days">{weekDays.map((value) => (
+                <div className="week-day">{value}</div>
+            ))}</div>
             {
                 calendar.map((week) => (
                     <div className="week" key={week}>
