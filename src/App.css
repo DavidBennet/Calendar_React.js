@@ -19,13 +19,21 @@
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: xx-large;
     font-weight: 700;
-    margin: 1rem auto;
     color: #f7fee7;
+
+    width: 89vw;
+    margin: 1rem auto 0;
+    background: #65a30d;
+    border-radius: 4px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .content {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    padding-left: 1rem;
+    padding: 1rem;
     width: 90vw;
 }

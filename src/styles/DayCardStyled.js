@@ -1,6 +1,6 @@
 import styled, {css} from "styled-components"
 
-export const Day = styled.div<{$props}>`
+export const Day = styled.div`
     width: 1.7rem;
     height: 1.7rem;
     display: flex;
@@ -14,4 +14,14 @@ export const Day = styled.div<{$props}>`
     text-align: center;
     vertical-align: center;
     margin: 1px auto;
+
+    ${(props) => props.state === "selected" && css`
+        background: #4d7c0f;
+        color: #f7fee7;
+    `};
+
+    ${(props) => props.state === "noPertenceMonth" && css`
+        opacity: 0.3;
+        cursor: default;
+    `}
 `;
